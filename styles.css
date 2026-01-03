@@ -1,0 +1,77 @@
+button,input {
+  cursor: pointer;
+}
+.header span{
+  font-size: 50px;
+}
+
+.playground {
+    display: flex;
+    padding: 10px;
+    height: 800px;
+    width: 1380px;
+    margin: 0 auto;
+    justify-content: center;
+    margin-bottom: 10px;
+
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
+.toolbox {
+  border: 2px solid black;
+  margin-right: 70px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+
+.container {
+  border: 2px black solid;
+  display: flex;
+  width: 960px;
+  flex-direction: column;
+}
+
+
+.row{
+  display: flex;
+  border: 0.1px black solid;
+  flex:1 1 0;
+
+
+}
+
+.clmn {
+  border: 0.1px black solid;
+  flex:1 1 0;
+
+}
+
+
+.footer{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.footer span {
+  font-size: 12px;
+
+}
+
+.Nvalue{
+  display: flex;
+  justify-content: center;
+}
+.slider{
+
+  width: 200px;
+}
+
