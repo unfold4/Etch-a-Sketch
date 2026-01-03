@@ -1,8 +1,9 @@
 let n=16;
 let isDraw=false;
 let color = "rgba(0, 0, 0, 1)";
- function changeCellColor(e){
-    if(e.target.classList.contains("clmn")) {
+ 
+function changeCellColor(e){
+    if(isDraw===true && e.target.classList.contains("clmn")) {
       e.target.style.backgroundColor=color;
     }}
 
@@ -11,28 +12,46 @@ let color = "rgba(0, 0, 0, 1)";
     let g=255*Math.random();
     let b=255*Math.random();
     color = `rgb(${r},${g},${b})`;
-    if(e.target.classList.contains("clmn")) {
+    if(isDraw===true && e.target.classList.contains("clmn")) {
       e.target.style.backgroundColor=color;
     }}
 
-  document.querySelector(".container").addEventListener("dblclick",(e)=>{
+
+
+  document.querySelector(".container").addEventListener("mousedown",(e)=>{
     isDraw = true;
+  })
+
+  document.querySelector(".container").addEventListener("mouseup",(e)=>{
+    isDraw = false;
   })
 
   document.querySelector(".rainbow").addEventListener("click",()=>{
     document.querySelector(".container").removeEventListener("mouseover",changeCellColor);
+    document.querySelector(".container").removeEventListener("mousedown",changeCellColor);
+
     document.querySelector(".container").addEventListener("mouseover",changeCellColorRainbow);
+    document.querySelector(".container").addEventListener("mousedown",changeCellColorRainbow);
+
   })
 
   document.querySelector(".eraser").addEventListener("click",()=>{
     document.querySelector(".container").removeEventListener("mouseover",changeCellColorRainbow);
+    document.querySelector(".container").removeEventListener("mousedown",changeCellColorRainbow);
+
     document.querySelector(".container").addEventListener("mouseover",changeCellColor);
+    document.querySelector(".container").addEventListener("mousedown",changeCellColor);
+
     color = "rgb(255,255,255)";
   })
 
   document.querySelector(".randomColor").addEventListener("click",()=>{
     document.querySelector(".container").removeEventListener("mouseover",changeCellColorRainbow);
+    document.querySelector(".container").removeEventListener("mousedown",changeCellColorRainbow);
+
     document.querySelector(".container").addEventListener("mouseover",changeCellColor);
+    document.querySelector(".container").addEventListener("mousedown",changeCellColor);
+
     let r=255*Math.random();
     let g=255*Math.random();
     let b=255*Math.random();
@@ -48,6 +67,8 @@ let color = "rgba(0, 0, 0, 1)";
   })
 
   document.querySelector(".container").addEventListener("mouseover",changeCellColor);
+  document.querySelector(".container").addEventListener("mousedown",changeCellColor);
+
 
  
 
