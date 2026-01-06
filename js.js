@@ -5,8 +5,10 @@ let color = "rgba(0, 0, 0, 1)";
 function changeCellColor(e){
     if(isDraw===true && e.target.classList.contains("clmn")) {
       e.target.style.backgroundColor=color;
-    }}
 
+
+    }}
+    
   function changeCellColorRainbow(e){
     let r=255*Math.random();
     let g=255*Math.random();
@@ -14,6 +16,7 @@ function changeCellColor(e){
     color = `rgb(${r},${g},${b})`;
     if(isDraw===true && e.target.classList.contains("clmn")) {
       e.target.style.backgroundColor=color;
+
     }}
 
 
